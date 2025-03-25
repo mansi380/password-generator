@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h1><i class="fas fa-lock"></i> SecurePass</h1>
+        <div class="theme-toggle">
+          <span class="theme-icon"><i class="fas fa-moon"></i></span>
+          <label class="switch">
+            <input type="checkbox" id="theme">
+            <span class="slider round"></span>
+          </label>
+          <span class="theme-icon"><i class="fas fa-sun"></i></span>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <div class="password-display">
+          <input type="text" id="password" readonly>
+          <button id="copy" class="btn-icon" title="Copy to clipboard">
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+        
+        <div class="strength-meter">
+          <div class="strength-labels">
+            <span>Strength</span>
+            <span id="strength">Weak</span>
+          </div>
+          <div class="meter">
+            <div class="bar" id="bar"></div>
+          </div>
+        </div>
+        
+        <div class="controls">
+          <div class="control-group">
+            <label for="length">Length: <span id="length-value">12</span></label>
+            <input type="range" id="length" min="4" max="32" value="12">
+          </div>
+          
+          <div class="checkboxes">
+            <label class="checkbox-container">
+              <input type="checkbox" id="uppercase" checked>
+              <span class="checkmark"></span>
+              <span>Uppercase (A-Z)</span>
+            </label>
+            
+            <label class="checkbox-container">
+              <input type="checkbox" id="numbers" checked>
+              <span class="checkmark"></span>
+              <span>Numbers (0-9)</span>
+            </label>
+            
+            <label class="checkbox-container">
+              <input type="checkbox" id="special-chars">
+              <span class="checkmark"></span>
+              <span>Special (!@#)</span>
+            </label>
+          </div>
+        </div>
+        
+        <button id="generate" class="btn-primary">
+          <span class="btn-content">Generate Password</span>
+          <span class="btn-loader">
+            <i class="fas fa-spinner fa-spin"></i>
+          </span>
+        </button>
+      </div>
+      
+      <div class="card-footer">
+        <div class="password-history">
+          <h3><i class="fas fa-history"></i> History</h3>
+          <div class="history-items" id="history"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
